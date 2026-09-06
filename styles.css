@@ -168,6 +168,13 @@ a {
     0 8px 20px rgba(50, 86, 214, 0.22);
 }
 
+.nav .nav-button,
+.nav .nav-button:visited,
+.nav .nav-button:hover,
+.nav .nav-button:active {
+  color: #ffffff;
+}
+
 
 /* =========================================================
    HERO
@@ -662,18 +669,17 @@ a {
 .floating-card {
   position: absolute;
 
-  right: -30px;
+  left: 90px;
+  right: auto;
   bottom: -27px;
 
   display: flex;
   align-items: center;
-
   gap: 12px;
 
   padding: 15px 19px;
 
   border: 1px solid var(--border);
-
   border-radius: 14px;
 
   background: white;

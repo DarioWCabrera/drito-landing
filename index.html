@@ -11,7 +11,7 @@
     <meta property="og:title" content="Drito | Todo tu negocio, en orden" />
 
     <meta property="og:description"
-        content="Sistema de gestión para comercios y empresas. Ventas, compras, stock, clientes, caja y más, todo en un solo lugar." />
+        content="Sistema de gestión para comercios y empresas con Asistente Drito. Administrá una o varias empresas, consultá información y prepará operaciones desde un solo lugar." />
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.drito.com.ar/" />
@@ -19,9 +19,227 @@
     <title>Drito | Todo tu negocio, en orden</title>
 
     <meta name="description"
-        content="Drito es un sistema de gestión para comercios y empresas. Ventas, compras, stock, clientes, cuentas corrientes, caja y reportes en un solo lugar." />
+        content="Drito es un sistema de gestión para comercios y empresas con asistente integrado. Ventas, compras, stock, clientes, caja, reportes y operaciones preparadas para revisión humana." />
 
     <link rel="stylesheet" href="styles.css" />
+
+    <style>
+        /* =====================================================
+           DRITO ASISTENTE · LANDING 21A.6.6g.1b
+        ====================================================== */
+        .assistant-section {
+            padding: 96px 0;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 88% 14%, rgba(49, 86, 214, 0.12), transparent 30%),
+                linear-gradient(180deg, #f7f9ff 0%, #ffffff 100%);
+        }
+
+        .assistant-intro-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+            align-items: center;
+            gap: clamp(42px, 7vw, 92px);
+        }
+
+        .assistant-copy h2 {
+            max-width: 720px;
+            margin: 14px 0 20px;
+        }
+
+        .assistant-copy > p {
+            max-width: 700px;
+            color: #657087;
+            font-size: 1.04rem;
+            line-height: 1.8;
+        }
+
+        .assistant-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            border: 1px solid rgba(49, 86, 214, 0.18);
+            border-radius: 999px;
+            color: #3156d6;
+            background: rgba(49, 86, 214, 0.07);
+            font-size: 0.74rem;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .assistant-pill::before {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #22c55e;
+            box-shadow: 0 0 0 5px rgba(34, 197, 94, 0.10);
+            content: "";
+        }
+
+        .assistant-benefits {
+            display: grid;
+            gap: 14px;
+            margin: 30px 0 0;
+        }
+
+        .assistant-benefit {
+            display: grid;
+            grid-template-columns: 42px minmax(0, 1fr);
+            gap: 14px;
+            align-items: start;
+            padding: 16px 17px;
+            border: 1px solid #e4e9f4;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.84);
+            box-shadow: 0 12px 28px rgba(16, 26, 49, 0.05);
+        }
+
+        .assistant-benefit__icon {
+            width: 42px;
+            height: 42px;
+            display: grid;
+            place-items: center;
+            border-radius: 13px;
+            color: #3156d6;
+            background: #eef2ff;
+            font-weight: 900;
+        }
+
+        .assistant-benefit strong {
+            display: block;
+            margin: 1px 0 5px;
+            color: #172033;
+            font-size: 0.96rem;
+        }
+
+        .assistant-benefit span {
+            display: block;
+            color: #6c7588;
+            font-size: 0.88rem;
+            line-height: 1.55;
+        }
+
+        .assistant-shot {
+            position: relative;
+            margin: 0;
+            overflow: hidden;
+            border: 1px solid #dfe5f1;
+            border-radius: 22px;
+            background: #ffffff;
+            box-shadow: 0 26px 65px rgba(22, 34, 65, 0.14);
+        }
+
+        .assistant-shot img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .assistant-shot figcaption {
+            display: grid;
+            gap: 4px;
+            padding: 16px 18px 18px;
+            border-top: 1px solid #edf0f6;
+            background: #ffffff;
+        }
+
+        .assistant-shot figcaption strong {
+            color: #172033;
+            font-size: 0.94rem;
+        }
+
+        .assistant-shot figcaption span {
+            color: #717b90;
+            font-size: 0.82rem;
+            line-height: 1.5;
+        }
+
+        .assistant-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+            margin-top: 26px;
+        }
+
+        .assistant-gallery .assistant-shot {
+            border-radius: 18px;
+            box-shadow: 0 18px 48px rgba(22, 34, 65, 0.10);
+        }
+
+        .assistant-control-note {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            max-width: 920px;
+            margin: 30px auto 0;
+            padding: 17px 19px;
+            border: 1px solid #dfe5f1;
+            border-radius: 16px;
+            color: #5f6a81;
+            background: #ffffff;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .assistant-control-note strong {
+            color: #172033;
+        }
+
+        .assistant-control-note__mark {
+            flex: 0 0 auto;
+            width: 28px;
+            height: 28px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            color: #ffffff;
+            background: #3156d6;
+            font-size: 0.82rem;
+            font-weight: 900;
+        }
+
+        @media (max-width: 980px) {
+            .assistant-section {
+                padding: 78px 0;
+            }
+
+            .assistant-intro-grid {
+                grid-template-columns: 1fr;
+                gap: 34px;
+            }
+
+            .assistant-copy {
+                max-width: 800px;
+            }
+        }
+
+        @media (max-width: 720px) {
+            .assistant-section {
+                padding: 62px 0;
+            }
+
+            .assistant-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .assistant-shot {
+                border-radius: 16px;
+            }
+
+            .assistant-benefit {
+                grid-template-columns: 38px minmax(0, 1fr);
+                padding: 14px;
+            }
+
+            .assistant-benefit__icon {
+                width: 38px;
+                height: 38px;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
@@ -39,13 +257,15 @@
             </a>
             <nav class="nav">
                 <a href="#funciones">Funciones</a>
+                <a href="#multiempresa">Multiempresa</a>
                 <a href="#como-funciona">Cómo funciona</a>
                 <a href="#contacto">Contacto</a>
+                <a href="https://app.drito.com.ar/login">
+                    Iniciar sesión
+                </a>
 
-                <a href="https://wa.me/5492983419423?text=Hola%2C%20vi%20Drito%20y%20quiero%20recibir%20informaci%C3%B3n%20para%20implementarlo%20en%20mi%20negocio."
-                    target="_blank" rel="noopener noreferrer" target="_blank" rel="noopener noreferrer"
-                    class="nav-button">
-                    Solicitar Drito
+                <a href="quiero-mi-drito.html" class="nav-button" style="color: #ffffff;">
+                    Quiero mi Drito
                 </a>
             </nav>
 
@@ -62,7 +282,7 @@
                 <div class="hero-content">
 
                     <span class="hero-label">
-                        Sistema de gestión para comercios y empresas
+                        Sistema de gestión para una o varias empresas
                     </span>
 
                     <h1>
@@ -73,23 +293,26 @@
                     <p class="hero-description">
                         Ventas, compras, stock, clientes, cuentas corrientes,
                         caja, reportes y gestión fiscal desde un solo lugar.
+                        Además, el Asistente Drito puede ayudarte a consultar información
+                        y preparar operaciones para revisión. Con Drito Multiempresa también
+                        podés administrar dos o más empresas totalmente independientes
+                        desde la misma plataforma.
                     </p>
 
                     <div class="hero-actions">
 
-                        <a href="https://wa.me/5492983419423?text=Hola%2C%20vi%20Drito%20y%20quiero%20recibir%20informaci%C3%B3n%20para%20implementarlo%20en%20mi%20negocio."
-                            target="_blank" rel="noopener noreferrer" class="button button-primary">
-                            Solicitar Drito
+                        <a href="quiero-mi-drito.html" class="button button-primary">
+                            Quiero mi Drito
                         </a>
 
-                        <a href="#funciones" class="button button-secondary">
-                            Conocer el sistema
+                        <a href="https://app.drito.com.ar/login" class="button button-secondary">
+                            Iniciar sesión
                         </a>
 
                     </div>
 
                     <p class="hero-small">
-                        Menos tareas repetitivas. Más información. Más control.
+                        Una sola plataforma. Cada empresa, sus propios datos.
                     </p>
 
                 </div>
@@ -292,6 +515,21 @@
                     </article>
 
 
+                    <article class="feature-card">
+                        <div class="feature-icon">ME</div>
+
+                        <div>
+                            <h3>Gestión Multiempresa</h3>
+
+                            <p>
+                                Administrá dos o más empresas desde Drito, manteniendo
+                                clientes, productos, stock, ventas, compras, caja y
+                                configuración independientes para cada una.
+                            </p>
+                        </div>
+                    </article>
+
+
                     <article class="feature-card feature-card-highlight">
                         <div class="feature-icon">+</div>
 
@@ -303,6 +541,73 @@
                                 para administrar y acompañar la gestión fiscal.
                             </p>
                         </div>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="problem-section" id="multiempresa">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+                        DRITO MULTIEMPRESA
+                    </span>
+
+                    <h2>
+                        Varias empresas.
+                        <span>Una sola plataforma.</span>
+                    </h2>
+
+                    <p>
+                        Si administrás más de una empresa, Drito te permite trabajar
+                        con todas desde el mismo sistema sin mezclar información.
+                        Cada empresa conserva sus propios datos, movimientos y configuración.
+                    </p>
+
+                </div>
+
+
+                <div class="problem-grid">
+
+                    <article class="problem-card">
+                        <div class="problem-icon">01</div>
+
+                        <h3>Empresas independientes</h3>
+
+                        <p>
+                            Cada empresa mantiene separados sus clientes, productos,
+                            stock, ventas, compras, caja y cuentas corrientes.
+                        </p>
+                    </article>
+
+
+                    <article class="problem-card">
+                        <div class="problem-icon">02</div>
+
+                        <h3>Un mismo Drito</h3>
+
+                        <p>
+                            Cambiá de empresa desde la misma plataforma y seguí trabajando
+                            con las mismas herramientas, sin abrir sistemas distintos.
+                        </p>
+                    </article>
+
+
+                    <article class="problem-card">
+                        <div class="problem-icon">03</div>
+
+                        <h3>Configuración propia</h3>
+
+                        <p>
+                            Cada empresa puede tener su identidad, preferencias y gestión
+                            fiscal por separado, sin compartir datos que no correspondan.
+                        </p>
                     </article>
 
                 </div>
@@ -328,8 +633,9 @@
 
                     <p>
                         No necesitás cambiar tu forma de trabajar de un día para otro.
-                        Primero conocemos tu negocio, configuramos el sistema y te
-                        acompañamos durante la puesta en marcha.
+                        Primero conocemos tu negocio, definimos si necesitás Drito Unitario
+                        o Drito Multiempresa, configuramos el sistema y te acompañamos
+                        durante la puesta en marcha.
                     </p>
 
                 </div>
@@ -404,6 +710,131 @@
 
             </div>
 
+        </section>
+
+
+        <section class="assistant-section" id="asistente-drito">
+            <div class="container">
+
+                <div class="assistant-intro-grid">
+
+                    <div class="assistant-copy">
+                        <span class="assistant-pill">
+                            Nuevo · Asistente Drito
+                        </span>
+
+                        <h2>
+                            No sólo organiza tu negocio.
+                            <span>También te ayuda a gestionarlo.</span>
+                        </h2>
+
+                        <p>
+                            Drito acompaña al usuario dentro de cada área del sistema,
+                            utilizando el contexto de la empresa activa para responder
+                            consultas, resumir información y preparar operaciones.
+                        </p>
+
+                        <div class="assistant-benefits">
+
+                            <div class="assistant-benefit">
+                                <div class="assistant-benefit__icon">01</div>
+                                <div>
+                                    <strong>Consultá en lenguaje natural</strong>
+                                    <span>
+                                        Preguntá por ventas, caja, cobros, stock,
+                                        vencimientos o qué merece atención.
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="assistant-benefit">
+                                <div class="assistant-benefit__icon">02</div>
+                                <div>
+                                    <strong>Trabaja con el contexto de tu empresa</strong>
+                                    <span>
+                                        La respuesta se construye sobre la empresa activa
+                                        y la información que el usuario puede consultar.
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="assistant-benefit">
+                                <div class="assistant-benefit__icon">03</div>
+                                <div>
+                                    <strong>Prepara acciones, vos decidís</strong>
+                                    <span>
+                                        Puede dejar una operación preparada para revisión.
+                                        Una persona autorizada controla y confirma antes
+                                        de ejecutar una acción sensible.
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <figure class="assistant-shot">
+                        <img
+                            src="assets/screenshots/drito-asistente-parte-hoy.png"
+                            alt="Asistente Drito mostrando un parte operativo con información de ventas, cobros, proveedores y caja"
+                            loading="lazy"
+                        />
+                        <figcaption>
+                            <strong>Un parte operativo en segundos</strong>
+                            <span>
+                                Drito cruza información disponible y marca qué merece
+                                atención sin inventar causas ni datos.
+                            </span>
+                        </figcaption>
+                    </figure>
+
+                </div>
+
+                <div class="assistant-gallery">
+
+                    <figure class="assistant-shot">
+                        <img
+                            src="assets/screenshots/drito-asistente-ventas-mes.png"
+                            alt="Asistente Drito respondiendo cómo vienen las ventas del mes dentro de Reportes"
+                            loading="lazy"
+                        />
+                        <figcaption>
+                            <strong>Preguntas dentro del módulo en el que estás trabajando</strong>
+                            <span>
+                                Consultá resultados concretos sin salir de la pantalla
+                                ni buscar la información manualmente.
+                            </span>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="assistant-shot">
+                        <img
+                            src="assets/screenshots/drito-asistente-prepara-venta.png"
+                            alt="Asistente Drito preparando una venta para revisión antes de confirmarla"
+                            loading="lazy"
+                        />
+                        <figcaption>
+                            <strong>Operaciones preparadas para revisión humana</strong>
+                            <span>
+                                Drito puede armar el borrador, mostrar cantidades, precios,
+                                impuestos y stock antes de que una persona lo confirme.
+                            </span>
+                        </figcaption>
+                    </figure>
+
+                </div>
+
+                <div class="assistant-control-note">
+                    <span class="assistant-control-note__mark">✓</span>
+                    <div>
+                        <strong>El control sigue siendo humano.</strong>
+                        Las acciones sensibles requieren confirmación explícita:
+                        Drito puede asistir y preparar la operación, pero una persona
+                        autorizada decide si se ejecuta.
+                    </div>
+                </div>
+
+            </div>
         </section>
 
         <section class="product-showcase" id="drito-por-dentro">
@@ -554,17 +985,16 @@
 
                         <p>
                             Contanos cómo trabajás y qué necesitás organizar.
-                            Te mostramos el sistema y vemos juntos cómo Drito
-                            puede adaptarse a tu comercio o empresa.
+                            Podés elegir Drito Unitario para una empresa o Drito Multiempresa
+                            para administrar dos o más empresas independientes desde la misma plataforma.
                         </p>
 
-                        <a href="https://wa.me/5492983419423?text=Hola%2C%20vi%20Drito%20y%20quiero%20recibir%20informaci%C3%B3n%20para%20implementarlo%20en%20mi%20negocio."
-                            target="_blank" rel="noopener noreferrer" class="contact-button">
+                        <a href="quiero-mi-drito.html" class="contact-button">
                             <span class="contact-button-icon">↗</span>
 
                             <div>
-                                <strong>Solicitar Drito</strong>
-                                <small>Escribinos por WhatsApp</small>
+                                <strong>Quiero mi Drito</strong>
+                                <small>Elegí la opción ideal para tu negocio</small>
                             </div>
                         </a>
 
@@ -620,7 +1050,7 @@
                 </div>
 
                 <p>
-                    Sistema de gestión para comercios y empresas.
+                    Sistema de gestión para comercios y empresas. Disponible en modalidad unitaria o multiempresa.
                 </p>
 
             </div>
@@ -642,6 +1072,14 @@
 
                 <a href="#contacto">
                     Contacto
+                </a>
+
+                <a href="quiero-mi-drito.html">
+                    Quiero mi Drito
+                </a>
+
+                <a href="https://app.drito.com.ar/login">
+                    Iniciar sesión
                 </a>
 
             </div>

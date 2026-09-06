@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="icon" type="image/png" href="assets/brand/drito-mark.png" />
+  <meta name="theme-color" content="#101a31" />
+
+  <title>Quiero mi Drito | Elegí la opción para tu negocio</title>
+
+  <meta
+    name="description"
+    content="Elegí Drito Unitario o Drito Multiempresa. Administrá una o varias empresas desde una misma plataforma."
+  />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    .plans-page {
+      min-height: calc(100vh - 82px);
+      padding: 72px 0 90px;
+      background:
+        radial-gradient(circle at 15% 10%, rgba(78, 113, 255, 0.12), transparent 34%),
+        radial-gradient(circle at 88% 18%, rgba(90, 213, 225, 0.12), transparent 30%),
+        linear-gradient(180deg, #f8faff 0%, #ffffff 58%, #f7f9fd 100%);
+    }
+
+    .plans-hero {
+      max-width: 820px;
+      margin: 0 auto 44px;
+      text-align: center;
+    }
+
+    .plans-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      margin-bottom: 18px;
+      border: 1px solid #dbe3ff;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.8);
+      color: #3156d6;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      box-shadow: 0 8px 24px rgba(49, 86, 214, 0.08);
+    }
+
+    .plans-hero h1 {
+      margin: 0;
+      color: #172033;
+      font-size: clamp(2.25rem, 5vw, 4.15rem);
+      line-height: 1.02;
+      letter-spacing: -0.045em;
+    }
+
+    .plans-hero h1 span {
+      color: #3156d6;
+    }
+
+    .plans-hero p {
+      max-width: 700px;
+      margin: 22px auto 0;
+      color: #687186;
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 26px;
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+
+    .plan-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      padding: 34px;
+      overflow: hidden;
+      border: 1px solid #e3e8f3;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: 0 18px 55px rgba(23, 32, 51, 0.09);
+    }
+
+    .plan-card--multi {
+      border-color: #cfd8ff;
+      box-shadow: 0 22px 65px rgba(49, 86, 214, 0.14);
+    }
+
+    .plan-card--multi::before {
+      content: "";
+      position: absolute;
+      top: -90px;
+      right: -80px;
+      width: 210px;
+      height: 210px;
+      border-radius: 50%;
+      background: rgba(49, 86, 214, 0.08);
+    }
+
+    .plan-badge {
+      align-self: flex-start;
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 10px;
+      margin-bottom: 22px;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: #3156d6;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .plan-card--multi .plan-badge {
+      background: #3156d6;
+      color: #ffffff;
+    }
+
+    .plan-title {
+      margin: 0;
+      color: #172033;
+      font-size: 1.8rem;
+      letter-spacing: -0.025em;
+    }
+
+    .plan-subtitle {
+      min-height: 54px;
+      margin: 10px 0 26px;
+      color: #687186;
+      line-height: 1.65;
+    }
+
+    .plan-divider {
+      height: 1px;
+      margin-bottom: 25px;
+      background: #edf0f6;
+    }
+
+    .plan-features {
+      display: grid;
+      gap: 14px;
+      margin: 0 0 30px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .plan-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+      color: #46516a;
+      line-height: 1.55;
+    }
+
+    .plan-check {
+      flex: 0 0 auto;
+      width: 23px;
+      height: 23px;
+      display: grid;
+      place-items: center;
+      margin-top: 1px;
+      border-radius: 50%;
+      background: #edf8f1;
+      color: #149b48;
+      font-size: 0.78rem;
+      font-weight: 900;
+    }
+
+    .plan-card--multi .plan-check {
+      background: #eef2ff;
+      color: #3156d6;
+    }
+
+    .plan-actions {
+      display: grid;
+      gap: 11px;
+      margin-top: auto;
+    }
+
+    .plan-button {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 17px;
+      border-radius: 11px;
+      font-weight: 800;
+      text-align: center;
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .plan-button:hover {
+      transform: translateY(-1px);
+    }
+
+    .plan-button--primary {
+      background: #3156d6;
+      color: #ffffff !important;
+      box-shadow: 0 11px 24px rgba(49, 86, 214, 0.22);
+    }
+
+    .plan-button--secondary {
+      border: 1px solid #d9dfeb;
+      background: #ffffff;
+      color: #172033 !important;
+    }
+
+    .plan-button--secondary:hover {
+      border-color: #bcc8f7;
+    }
+
+    .plans-note {
+      max-width: 850px;
+      margin: 34px auto 0;
+      padding: 18px 22px;
+      border: 1px solid #e1e7f4;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.75);
+      color: #687186;
+      text-align: center;
+      line-height: 1.65;
+    }
+
+    .plans-note strong {
+      color: #172033;
+    }
+
+    .plans-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 28px;
+      color: #576176 !important;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .plans-back:hover {
+      color: #3156d6 !important;
+    }
+
+    @media (max-width: 820px) {
+      .plans-page {
+        padding: 48px 0 72px;
+      }
+
+      .plans-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .plan-card {
+        padding: 27px 23px;
+      }
+
+      .plan-subtitle {
+        min-height: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+
+      <a href="index.html" class="brand">
+        <img
+          src="assets/brand/drito-mark.png"
+          alt="Drito"
+          class="brand-mark"
+        />
+
+        <div class="brand-copy">
+          <span class="brand-name">Drito</span>
+          <span class="brand-slogan">Todo tu negocio, en orden</span>
+        </div>
+      </a>
+
+      <nav class="nav">
+        <a href="index.html#funciones">Funciones</a>
+        <a href="index.html#como-funciona">Cómo funciona</a>
+        <a href="index.html#contacto">Contacto</a>
+
+        <a
+          href="https://app.drito.com.ar/login"
+          class="nav-button"
+          style="color: #ffffff;"
+        >
+          Ingresar
+        </a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main class="plans-page">
+
+    <div class="container">
+
+      <a href="index.html" class="plans-back">
+        ← Volver a Drito
+      </a>
+
+      <div class="plans-hero">
+
+        <span class="plans-kicker">
+          Elegí tu Drito
+        </span>
+
+        <h1>
+          Un mismo sistema.
+          <span>La opción que necesitás.</span>
+        </h1>
+
+        <p>
+          Podés comenzar gestionando una sola empresa o trabajar con varias
+          empresas totalmente independientes desde la misma plataforma.
+        </p>
+
+      </div>
+
+
+      <div class="plans-grid">
+
+        <!-- =====================================================
+             DRITO UNITARIO
+        ====================================================== -->
+
+        <article class="plan-card">
+
+          <span class="plan-badge">
+            Una empresa
+          </span>
+
+          <h2 class="plan-title">
+            Drito Unitario
+          </h2>
+
+          <p class="plan-subtitle">
+            Para comercios, profesionales y empresas que necesitan administrar
+            una única organización de forma simple y centralizada.
+          </p>
+
+          <div class="plan-divider"></div>
+
+          <ul class="plan-features">
+
+            <li>
+              <span class="plan-check">✓</span>
+              <span>Ventas, cobros, compras y proveedores.</span>
+            </li>
+
+            <li>
+              <span class="plan-check">✓</span>
+              <span>Productos, precios y control de stock.</span>
+            </li>
+
+            <li>
+              <span class="plan-check">✓</span>
+              <span>Clientes y cuentas corrientes.</span>
+            </li>
+
+            <li>
+              <span class="plan-check">✓</span>
+              <span>Caja, gastos, reportes y gestión fiscal.</span>
+            </li>
+
+            <li>
+              <span class="plan-check">✓</span>
+              <span>Configuración y apariencia propias de tu negocio.</span>
+            </li>
+
+          </ul>
+
+          <div class="plan-actions">
+
+            <a
+              class="plan-button plan-button--primary"
+              href="https://wa.me/5492983419423?text=Hola%2C%20vi%20Drito%20y%20quiero%20solicitar%20informaci%C3%B3n%20sobre%20Drito%20Unitario."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Solicitar Drito Unitario
+            </a>
+
+            <a
+              class="plan-button plan-button--secondary"
+              href="https://app.drito.com.ar/login"
+            >
+              Ya tengo Drito · Iniciar sesión
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- =====================================================
+             DRITO MULTIEMPRESA
+        ====================================================== -->
+
+        <article class="plan-card plan-card--multi">
+
+          <span class="plan-badge">
+            Multiempresa
+          </span>
+
+          <h2 class="plan-title">
+            Drito Multiempresa
+          </h2>
+
+          <p class="plan-subtitle">
+            Para quienes administran dos o más empresas y necesitan mantener
+            cada operación separada sin salir de Drito.
+          </p>
+
+          <div class="plan-divider"></div>
+
+          <ul class="plan-features">
+
+            <li>
+              <span class="plan-check">✓</span>
+              <span>Dos o más empresas dentro de una misma Cuenta Drito.</span>
+            </li>
+
+            <li>
+              <span class="plan-check">✓</span>
+              <span>Clientes, productos y proveedores independientes.</span>
+            </li>
+
+            <li>
+              <span class="plan-check">✓</span>
+              <span>Stock, ventas, compras y caja separados por empresa.</span>
+            </li>
+
+            <li>
+              <span class="plan-check">✓</span>
+              <span>Configuración fiscal y datos de cada empresa totalmente independientes.</span>
+            </li>
+
+            <li>
+              <span class="plan-check">✓</span>
+              <span>Cambio rápido de empresa desde la misma plataforma.</span>
+            </li>
+
+          </ul>
+
+          <div class="plan-actions">
+
+            <a
+              class="plan-button plan-button--primary"
+              href="https://wa.me/5492983419423?text=Hola%2C%20vi%20Drito%20y%20quiero%20solicitar%20informaci%C3%B3n%20sobre%20Drito%20Multiempresa."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Solicitar Drito Multiempresa
+            </a>
+
+            <a
+              class="plan-button plan-button--secondary"
+              href="https://app.drito.com.ar/login"
+            >
+              Ya tengo Drito · Iniciar sesión
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+
+
+      <div class="plans-note">
+        <strong>¿No sabés cuál elegir?</strong>
+        Escribinos y vemos juntos qué modalidad se adapta mejor a tu negocio.
+        Drito puede comenzar con una sola empresa y habilitar Multiempresa
+        cuando tu operación lo necesite.
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <footer class="site-footer">
+
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+
+        <div class="footer-brand-top">
+
+          <img
+            src="assets/brand/drito-mark.png"
+            alt="Drito"
+            class="footer-mark"
+          />
+
+          <div>
+            <strong>Drito</strong>
+            <span>Todo tu negocio, en orden</span>
+          </div>
+
+        </div>
+
+        <p>
+          Sistema de gestión para comercios y empresas.
+        </p>
+
+      </div>
+
+
+      <div class="footer-links">
+
+        <a href="index.html#funciones">
+          Funciones
+        </a>
+
+        <a href="index.html#como-funciona">
+          Cómo funciona
+        </a>
+
+        <a href="index.html#drito-por-dentro">
+          Drito por dentro
+        </a>
+
+        <a href="index.html#contacto">
+          Contacto
+        </a>
+
+      </div>
+
+
+      <div class="footer-contact">
+
+        <span>¿Necesitás ayuda para elegir?</span>
+
+        <a
+          href="https://wa.me/5492983419423?text=Hola%2C%20vi%20Drito%20y%20quiero%20que%20me%20asesoren%20sobre%20qu%C3%A9%20modalidad%20necesito."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Escribinos por WhatsApp
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="container footer-bottom">
+
+      <span>
+        © 2026 Drito. Todos los derechos reservados.
+      </span>
+
+      <span>
+        www.drito.com.ar
+      </span>
+
+    </div>
+
+  </footer>
+
+</body>
+
+</html>
